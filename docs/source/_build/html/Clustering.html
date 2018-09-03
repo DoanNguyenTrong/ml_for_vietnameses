@@ -1,0 +1,530 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="vi" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="vi" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Clustering- Những kiến thức mở đầu &mdash; Tài liệu Machine Learing for Vietnameses 0.1.0</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Tìm Kiếm" href="search.html" />
+    <link rel="next" title="Giúp đỡ!" href="help.html" />
+    <link rel="prev" title="Giới thiệu về Machine Learning" href="introduction.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Machine Learing for Vietnameses
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Giới thiệu về Machine Learning</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Clustering- Những kiến thức mở đầu</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#gioi-thieu">Giới thiệu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cac-thuat-toan-cua-clustering">Các thuật toán của Clustering</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#clustering-dua-tren-ton-ti-hierarchical">Clustering dựa trên tôn ti (hierarchical)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#k-means-clustering">k-Means Clustering</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#vai-dong-gioi-thieu-ve-thuat-toan">Vài dòng giới thiệu về thuật toán</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ung-dung-trong-thuc-te">Ứng dụng trong thực tế</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#li-thuyet">Lí thuyết</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#thuat-toan">Thuật toán</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lua-chon-k">Lựa chọn K</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#k-nearest-neighbors">k-Nearest Neighbors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#mixture-of-gaussian">Mixture of Gaussian</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#power-iteration-clustering">Power iteration Clustering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help.html">Giúp đỡ!</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Machine Learing for Vietnameses</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Clustering- Những kiến thức mở đầu</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Clustering.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="clustering-nhung-kien-thuc-mo-dau">
+<h1>Clustering- Những kiến thức mở đầu<a class="headerlink" href="#clustering-nhung-kien-thuc-mo-dau" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="gioi-thieu">
+<h2>Giới thiệu<a class="headerlink" href="#gioi-thieu" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><strong>Clustering</strong> là phương pháp nhóm một tập các đối tượng(object) theo
+một cách mà các đối tượng được đặt trong cùng một nhóm (cluster) sẽ
+mang trong mình những đặc điểm tương tự nhau hơn những đối tượng nằm
+trong nhóm khác. Đây là một nhiệm vụ cốt lõi của <strong>data mining</strong> hay
+dịch ra là đào mỏ dữ liệu, một phương pháp được dùng phổ biến trong
+phân tích dữ liệu thống kê (statistical data analysis), được dùng
+trong rất nhiều lĩnh vực như: machine learning, pattern recognition
+(nhận dạng nguyên mẫu), image analysis (thống kê hình ảnh),
+information retrieval (khôi phục thông tin), bioinformatics (phân tích
+dữ liệu di truyền - gene), data compression (nén dữ liệu), và computer
+graphics (đồ họa máy tính).</div>
+<div class="line"><strong>Clustering</strong> không phải là một thuật toán, mà là một nhiệm vụ cần
+được giải quyết. Nhiệm vụ này có thể được thực hiện bằng những thuật
+toán đã được xây dựng và phát triển trong khoảng 50 năm đổ lại.</div>
+<div class="line">Clustering là một bài toán tối ưu nhiều mục tiêu (multi-objective
+optimization problem)</div>
+</div>
+</div>
+<div class="section" id="cac-thuat-toan-cua-clustering">
+<h2>Các thuật toán của Clustering<a class="headerlink" href="#cac-thuat-toan-cua-clustering" title="Permalink to this headline">¶</a></h2>
+<p>Các thuật toán của clustering có thể được phân loại dựa trên mô hình của
+các cluster. Hiện nay có khoảng hơn 100 ấn phẩm đã công bố về thuật toán
+clustering, nhưng nhìn chung tất cả đều dựa trên một số đặc điểm chính,
+điểm khác biệt cốt lõi nằm trong phương pháp tiếp cận dựa trên nền tàng
+toán học.</p>
+<div class="section" id="clustering-dua-tren-ton-ti-hierarchical">
+<h3>Clustering dựa trên tôn ti (hierarchical)<a class="headerlink" href="#clustering-dua-tren-ton-ti-hierarchical" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="section" id="k-means-clustering">
+<h1>k-Means Clustering<a class="headerlink" href="#k-means-clustering" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="vai-dong-gioi-thieu-ve-thuat-toan">
+<h2>Vài dòng giới thiệu về thuật toán<a class="headerlink" href="#vai-dong-gioi-thieu-ve-thuat-toan" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">k-Means Clustering là một trong những thuật toán đơn giản và nổi tiếng
+nhất của làng Machine Learning. Nó là phương pháp tuy đơn giản nhưng
+đặc biệt hiệu quả trong bài toán Unsupervised Learning, khi mà dữ liệu
+của bạn chưa được phân loại (unlabeled). Mục tiêu của thuật toán này
+là chia nhỏ data của bạn thành k groups dựa trên features được cung
+cấp.. Các điểm dữ liệu được xếp vào trong từng nhóm dựa trên sự giống
+nhau về đặc điểm nhận dạng .</div>
+</div>
+</div>
+<div class="section" id="ung-dung-trong-thuc-te">
+<h2>Ứng dụng trong thực tế<a class="headerlink" href="#ung-dung-trong-thuc-te" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">Vì khả năng cơ bản của k-Means Clustering là chia nhỏ dữ liệu ban đầu
+thành các nhóm nhỏ, tất cả hoạt động dựa trên thuật toán mà không yêu
+cầu bất kì kiến thức của người sử dụng về dữ liệu đã được thu thập(to
+- nhỏ, xấu - đẹp, méo - tròn). Nó có thể được sử dụng để xác nhận các
+giả thiết về việc nên phân chia làm bao nhiêu nhóm, là những nhóm nào,
+khi mà lượng dữ liệu thu được lớn và phức tạp. Khi mà 2 thông số trên
+được xác định, bất kì một sample mới sẽ đễ dàng được gán nhãn vào vị
+trí chính xác.</div>
+<div class="line">Đây là một thuật toán linh hoạt có thể được ứng dụng vào bất kì quy
+trình <strong>phân loại và chia nhóm</strong>. Một vài ví dụ có thể kể đến sau đây:</div>
+</div>
+<ol class="arabic simple">
+<li>Trong giao dich ngân hàng, việc phân loại dữ liệu khách hàng là đặc
+biệt quan trọng, thường được dựa vào đó để đưa ra các chính sách
+chung cho toàn hệ thống hay là có những chính sách chăm sóc đến từng
+khách hàng. Một vài cách phân loại dựa trên hành vi người dùng như
+sau:<ul>
+<li>Phân loại dựa trên lịch sử thanh toán (chi tiêu)</li>
+<li>Phân loại dựa trên hoạt động trên ứng dụng di động, trên website,
+hay trên nền tảng ATM</li>
+<li>Định nghĩa tính cách cá nhân khách hàng dựa trên mối quan tâm của
+họ (thông qua lịch sử mua sắm)</li>
+<li>Tạo profile của khách hàng dựa trên dữ liệu theo dõi hoạt động</li>
+</ul>
+</li>
+<li>Phân loại sáng chế của cục sở hữu khoa học kĩ thuật:<ul>
+<li>Nhóm các sáng chế dựa trên hoạt động kinh doanh</li>
+<li>Nhóm các sáng chế dựa trên khối ngành sản suất</li>
+</ul>
+</li>
+<li>Phân loại cảm biến theo chức năng:<ul>
+<li>Phương pháp phát hiện hoạt động trong nhóm cảm biến chuyển động</li>
+<li>Chia nhóm ảnh</li>
+<li>Phân loại file audio</li>
+<li>Chia nhóm trong theo dõi sức khỏe</li>
+</ul>
+</li>
+</ol>
+<p>Đặc biệt, việc theo dõi sự thay đổi của những điểm dữ liệu bị theo dõi
+(một số cá nhân trong dữ liệu khách hàng của ngân hàng) có thể được sử
+dụng để theo dõi xu hướng hoạt động. Điều này thường được sử dụng nhiều
+trong theo dõi hoạt động mua sắm, góp phần giúp cho các tập đoàn lớn như
+Nike, Zara, Uniqlo... nắm bắt được người dùng và đưa ra những chính sách
+góp phần nâng cao doanh số cũng như thúc đẩy hoạt động mua sắm.</p>
+</div>
+<div class="section" id="li-thuyet">
+<h2>Lí thuyết<a class="headerlink" href="#li-thuyet" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">Bắt đầu bằng một ví dụ đơn giản, trong một lớp có 50 học sinh, chúng
+ta cần chia thành 3 nhóm dựa trên chiều cao của các cá nhân trong lớp.
+Có thể tạm gọi là &quot;Cao&quot;, &quot;Trung Bình&quot;, và &quot;Thấp&quot;. Việc dán nhãn như
+trên chỉ mang tính minh họa và hoàn toàn không ảnh hưởng đến kết quả
+của bài toán. Như vậy chúng ta có một tập dữ liệu
+<span class="math notranslate nohighlight">\(\mathbf{x}_i, i=1 \cdots 50\)</span> là 50 giá trị chiều cao của các
+thành viên trong lớp.</div>
+<div class="line">Như đã nói ở trên, chúng ta muốn chia lớp thành 3 nhóm, do đó chúng ta
+có <span class="math notranslate nohighlight">\(\mathbf{c}_j, j = 1 \cdots 3\)</span> là kí hiệu 3 điểm trung tâm
+của mỗi nhóm. <span class="math notranslate nohighlight">\(\mathbf{c}_j\)</span> là một giá trị về chiều cao (mét)
+và những cá nhân trong lớp có chiều cao gần với <span class="math notranslate nohighlight">\(\mathbf{c}_j\)</span>
+sẽ được xếp vào nhóm <span class="math notranslate nohighlight">\(j\)</span>. Tôi để các giá trị
+<span class="math notranslate nohighlight">\(\mathbf{c}_j\)</span>, <span class="math notranslate nohighlight">\(\mathbf{x}_i\)</span> in đậm thể hiện đó là
+vector vì trong ví dụ này, chúng ta chỉ có một tham số được đo lường
+đó là chiều cao, nhưng để không mất tính tổng quát,
+<span class="math notranslate nohighlight">\(\mathbf{c}_j\)</span> và <span class="math notranslate nohighlight">\(\mathbf{x}_i\)</span> có thể chứa thêm nhiều
+tham số khác, như ngày tháng nắm sinh, cân nặng, ...</div>
+<div class="line">&nbsp;Việc tiếp theo là định nghĩa khoảng cách về chiều cao giữa một thành
+viên bất kì <span class="math notranslate nohighlight">\(\mathbf{x}_i\)</span> đến điểm trung tâm của nhóm
+<span class="math notranslate nohighlight">\(\mathbf{c}_j\)</span>. Chúng ta có định nghĩa:</div>
+</div>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}d_j\left( {{{\bf{x}}_i},{{\bf{c}}_j}} \right) = \left\| {{{\bf{x}}_i} - {{\bf{c}}_j}} \right\|_2^2\\là hàm khoảng cách giữa hai điểm này.\end{aligned}\end{align} \]</div>
+<ul class="simple">
+<li><span class="math notranslate nohighlight">\(d_j\left( {{{\bf{x}}_i},{{\bf{c}}_j}} \right)\)</span> là kí hiệu
+khoảng cách (lấy chữ cái đầu trong &quot;distance&quot;) giữa hai điểm
+<span class="math notranslate nohighlight">\(\mathbf{c}_i\)</span> và <span class="math notranslate nohighlight">\(\mathbf{x}_i\)</span>.</li>
+<li><span class="math notranslate nohighlight">\(\left\| {\cdots} \right\|_2^2\)</span> là bình phương của hàm
+<span class="math notranslate nohighlight">\(L^2-norm\)</span> (hay còn được gọi là vector norm)</li>
+</ul>
+<div class="line-block">
+<div class="line">Giải thích một chút về hàm <span class="math notranslate nohighlight">\(L^2-norm\)</span> này. Công thức toán học
+của nó như sau:</div>
+</div>
+<blockquote>
+<div><div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}{\left\| {{{\bf{x}}_i} - {{\bf{c}}_i}} \right\|_2} = \sqrt {\sum\limits_{k = 1}^n {{{\left| {{x_k} - {c_k}} \right|}^2}} }\\với vector\end{aligned}\end{align} \]</div>
+<p><span class="math notranslate nohighlight">\({{\bf{x}}_i} = \left\langle {{x_1},{x_2},...,{x_k},...,{x_n}} \right\rangle\)</span>
+và
+<span class="math notranslate nohighlight">\({{\bf{c}}_i} = \left\langle {{c_1},{c_2},...,{c_k},...,{c_n}} \right\rangle\)</span>.</p>
+</div></blockquote>
+<div class="line-block">
+<div class="line">Trong ví dụ này, <span class="math notranslate nohighlight">\(\mathbf{c}_j\)</span> và <span class="math notranslate nohighlight">\(\mathbf{x}_i\)</span> chỉ có 1
+tham số duy nhất nên giả sử ta có: <span class="math notranslate nohighlight">\(\mathbf{x}_{34} = 1.32m\)</span> thể
+hiện thành viên thứ 34 trong lớp có chiều cao <span class="math notranslate nohighlight">\(1.32m\)</span>, và
+<span class="math notranslate nohighlight">\(\mathbf{c}_2 = 1.30m\)</span> thể hiện nhóm <span class="math notranslate nohighlight">\(j=2\)</span> có giá trị
+trung tâm là <span class="math notranslate nohighlight">\(1.30m\)</span>, chúng ta có thể tính ra được giá trị của
+hàm khoảng cách:</div>
+</div>
+<blockquote>
+<div><div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}d_j\left( {{{\bf{x}}_i},{{\bf{c}}_j}} \right) = {\left( {\sqrt {{{\left( {1.32 - 1.30} \right)}^2}} } \right)^2} = {\left( {0.02} \right)^2} = 0.004\\(Các bạn đừng quên là chúng ta đang tính bình phương nhé).\end{aligned}\end{align} \]</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">Chúng ta có 3 giá trị của 3 nhóm khi <span class="math notranslate nohighlight">\(j=1 \cdots 3\)</span>, do đó hàm
+tổng khoảng cách từ 1 điểm <span class="math notranslate nohighlight">\(\mathbf{x}_i\)</span> đến cả 3 điểm
+<span class="math notranslate nohighlight">\(\mathbf{c}_i\)</span> là:</div>
+</div>
+<blockquote>
+<div><div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\sum\limits_{j = 1}^k {d\left( {{{\bf{x}}_i},{{\bf{c}}_j}} \right)}  = \sum\limits_{j = 1}^k {\left\| {{{\bf{x}}_i} - {{\bf{c}}_j}} \right\|_2^2}\\ở đây :math:`k=3` là số clusters, như đã được định nghĩa ở trên.\end{aligned}\end{align} \]</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">Đến đây, chúng ta đã tính được khoảng cách từ 1 điểm
+<span class="math notranslate nohighlight">\(\mathbf{x}_i\)</span>, nhưng vì chúng ta có tất cả 50 thành viên trong
+lớp, do đó, hàm khoảng cách cần phải nâng cấp lên 1 lần nữa.</div>
+</div>
+<blockquote>
+<div><div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\sum\limits_{i = 1}^m {\sum\limits_{j = 1}^k {d\left( {{{\bf{x}}_i},{{\bf{c}}_j}} \right)} }  = \sum\limits_{i = 1}^m {\sum\limits_{j = 1}^k {\left\| {{{\bf{x}}_i} - {{\bf{c}}_j}} \right\|_2^2} }\\:math:`m=50` là số sample trong data hay số thành viên trong lớp.\end{aligned}\end{align} \]</div>
+</div></blockquote>
+<div class="line-block">
+<div class="line">Đến đây, chúng ta đã có một hàm có thể ước lượng được ưu nhược điểm
+của <span class="math notranslate nohighlight">\(\mathbf{c}_j\)</span>. Càng chọn <span class="math notranslate nohighlight">\(\mathbf{c}_j\)</span> sao cho hàm
+trên có giá trị càng nhỏ, thuật toán càng tốt hơn. Khi mà giá trị của
+<span class="math notranslate nohighlight">\(\mathbf{x}_i\)</span> là cố định thì <strong>PHƯƠNG PHÁP CHỌN</strong>
+<span class="math notranslate nohighlight">\(\mathbf{c}_j\)</span> là trung tâm của thuật toán k-Means Clustering.</div>
+<div class="line">Bây giờ, ta có thể đặt:</div>
+</div>
+<blockquote>
+<div><div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}J = \sum\limits_{i = 1}^m {\sum\limits_{j = 1}^k {d\left( {{{\bf{x}}_i},{{\bf{c}}_j}} \right)} }  = \sum\limits_{i = 1}^m {\sum\limits_{j = 1}^k {\left\| {{{\bf{x}}_i} - {{\bf{c}}_j}} \right\|_2^2} }\\là hàm mục tiêu (objective function) hay hàm phí tổn (cost function)\end{aligned}\end{align} \]</div>
+<p>cho bài toán.</p>
+</div></blockquote>
+<div class="line-block">
+<div class="line">Và thuật toán k-Means Clustering đi tìm giá trị cực tiểu:</div>
+</div>
+<blockquote>
+<div><div class="math notranslate nohighlight">
+\[{J_{\min }} = \arg \mathop {\min }\limits_c \sum\limits_{i = 1}^m {\sum\limits_{j = 1}^k {d\left( {{{\bf{x}}_i},{{\bf{c}}_j}} \right)} }\]</div>
+</div></blockquote>
+</div>
+<div class="section" id="thuat-toan">
+<h2>Thuật toán<a class="headerlink" href="#thuat-toan" title="Permalink to this headline">¶</a></h2>
+<p>Bây giờ là lúc chúng ta cùng nhau tìm hiểu về quy luật để từ những giá
+trị <span class="math notranslate nohighlight">\(\mathbf{c}_j\)</span> được chọn ngẫu nhiên, chúng ta có thể đi đến
+giá trị mong muốn đảm bảo việc phân nhóm thành công. Sơ đồ thuật toán
+như sau:</p>
+<ol class="arabic">
+<li><p class="first">Input: <span class="math notranslate nohighlight">\(k\)</span>- số cluster, <span class="math notranslate nohighlight">\(\mathbf{x}_i, i=1 \cdots 50\)</span>-
+data</p>
+</li>
+<li><p class="first">Khởi tạo: Đặt <span class="math notranslate nohighlight">\(\mathbf{c}_j, j = 1 \cdots 3\)</span> tại các vị trí bất
+kì</p>
+</li>
+<li><p class="first">Lặp lại đến khi hội tụ:</p>
+<ul>
+<li><p class="first">Với mỗi điểm <span class="math notranslate nohighlight">\(\mathbf{x}_i\)</span>:</p>
+<ul class="simple">
+<li>Tìm điểm trung tâm gần nhất <span class="math notranslate nohighlight">\(\mathbf{c}_j\)</span> của nó (so
+sánh <span class="math notranslate nohighlight">\(d_j\left( {{{\bf{x}}_i},{{\bf{c}}_j}} \right)\)</span></li>
+<li>Xếp <span class="math notranslate nohighlight">\(\mathbf{x}_i\)</span> vào Cluser <span class="math notranslate nohighlight">\(j\)</span></li>
+</ul>
+</li>
+<li><p class="first">Với mỗi Cluster <span class="math notranslate nohighlight">\(j=1 \cdots k\)</span>:</p>
+<ul>
+<li><div class="first line-block">
+<div class="line">Điểm trung tâm mới <span class="math notranslate nohighlight">\(\mathbf{c}_{j}-new\)</span> là trung bình
+cộng của tất cả các điểm <span class="math notranslate nohighlight">\(\mathbf{x}_i\)</span> đã được xếp vào
+trong Cluster <span class="math notranslate nohighlight">\(j\)</span> từ bước trên.</div>
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}{{\bf{c}}_j} = \frac{1}{{\left| {{S_j}} \right|}}\sum\limits_{{{\bf{x}}_i} \in {S_j}} {{{\bf{x}}_i}}\\:math:`S_j` là tập các điểm dữ liệu :math:`\mathbf{x}_i` của\end{aligned}\end{align} \]</div>
+<p>cluster thứ <span class="math notranslate nohighlight">\(j\)</span> trong tập dữ liệu.</p>
+</div></blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p class="first">Kết thúc khi không có sự thay đổi từ cluster này sang cluster kia.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line">Dựa vào công thức tính toán của hàm, chúng ta có thể đặt ra câu hỏi
+là: <strong>Kiểu dữ liệu nào thì thích hợp áp dụng k-Means Clustering?</strong>.
+Kiểu dữ liệu số học(numerical) hay kiểu dữ liệu phân loại
+(categorical)?</div>
+<div class="line">Câu trả lời là chỉ có kiểu dữ liệu số học được chấp nhận mà thôi. Bạn
+thấy đấy, tất cả các bước kể trên, chúng ta đi tính khoảng cách từ 1
+điểm trong tập dữ liệu <span class="math notranslate nohighlight">\(\mathbf{x}_i\)</span> đến một điểm trung tâm
+<span class="math notranslate nohighlight">\(\mathbf{c}_j\)</span>, đây là phương pháp tính khoảng cách hình học
+Euclid chúng ta đã học từ bậc phổ thông. Đối với các tập dữ liệu chứa
+các thuộc tính về Categorical, <strong>không áp dụng k-Means Clustering</strong>
+được nhé!</div>
+<div class="line">Trang web
+<a class="reference external" href="http://stanford.edu/class/ee103/visualizations/kmeans/kmeans.html">này</a>
+cho phép bạn nhìn thấy sự thay đổi một cách trực quan thuật toán. Bạn
+nên ghé qua để có thể hiểu hơn về thuật toán.</div>
+</div>
+</div>
+<div class="section" id="lua-chon-k">
+<h2>Lựa chọn K<a class="headerlink" href="#lua-chon-k" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">Thuật toán k-Means yêu cầu một điều kiện tiên quyết đó là phải biết
+trước chính xác giá trị của k. Đây là một bước đòi hỏi kĩ năng và kinh
+nghiệm của người phân tích dữ liệu. <strong>Chọn k như thế nào là phù
+hợp?</strong>. Để tìm số lượng cluster trong dữ liệu, người dùng phải chạy
+thuật toán với một khoảng giá trị của k và so sánh kết quả thu được.
+Cơ bản, không có phương pháp xác định giá trị chính xác nào của k,
+nhưng một giá trị ước lượng đúng có thể thu được bằng cách sử dụng
+phương pháp sau:</div>
+<div class="line">Một đại lượng thường được sử dụng để so sánh kết quả giữa các giá trị
+khác nhau của k là khoảng cách trung bình của các điểm dữ liệu
+<span class="math notranslate nohighlight">\(\mathbf{x}_i\)</span> tới tâm của cluster <span class="math notranslate nohighlight">\(\mathbf{c}_j\)</span>. Vì việc
+tiếp tục tăng giá trị của k luôn làm giảm khoảng cách trung bình này,
+và trường hợp cực trị đó là giá trị khoảng cách tiến tới 0 khi
+<span class="math notranslate nohighlight">\(k=m\)</span> (<span class="math notranslate nohighlight">\(m\)</span> là số lượng điểm dữ liệu trong data). Do đó,
+chúng ta không dùng đại lượng này một cách trực tiếp. Thay vào đó,
+chúng ta sẽ dùng đồ thị về khoảng cách trung bình của các điểm là hàm
+của k và xác định điểm gấp khúc &quot;elbow point&quot;, khi mà độ dốc của đồ
+thị thay đổi đột ngột, có thể được sử dụng để xác định k.</div>
+<div class="line">Một số các phương pháp khác tồn tại để xác định giá trị thích hợp của
+k, đó là cross-validation, information criteria, the information
+theoretic jump method, the silhouette method, và the G-means algorithm
+(Xin được để nguyên văn để độc giả tiện tra cứu). Hơn nữa, việc quan
+sát sự phân bố của dữ liệu trong các nhóm cung cấp cái nhìn vào việc
+làm thế nào thuật toán phân chia dữ liệu đối với mỗi giá trị của k.
+Việc chọn một số điểm dữ liệu ngẫu nhiên và vẽ đồ thị là cần thiết
+trong đa số trường hợp.</div>
+</div>
+</div>
+</div>
+<div class="section" id="k-nearest-neighbors">
+<h1>k-Nearest Neighbors<a class="headerlink" href="#k-nearest-neighbors" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://www.analyticsvidhya.com/blog/2018/03/introduction-k-neighbours-algorithm-clustering/">https://www.analyticsvidhya.com/blog/2018/03/introduction-k-neighbours-algorithm-clustering/</a></p>
+</div>
+<div class="section" id="mixture-of-gaussian">
+<h1>Mixture of Gaussian<a class="headerlink" href="#mixture-of-gaussian" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="power-iteration-clustering">
+<h1>Power iteration Clustering<a class="headerlink" href="#power-iteration-clustering" title="Permalink to this headline">¶</a></h1>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="help.html" class="btn btn-neutral float-right" title="Giúp đỡ!" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="introduction.html" class="btn btn-neutral" title="Giới thiệu về Machine Learning" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Doan Nguyen.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.0',
+            LANGUAGE:'vi',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

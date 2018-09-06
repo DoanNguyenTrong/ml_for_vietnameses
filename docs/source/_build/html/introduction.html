@@ -82,6 +82,8 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Giới thiệu về Machine Learning</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#gioi-thieu-chung">Giới thiệu chung</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#ml-tasks-cac-tac-vu-cua-ml">ML tasks (Các tác vụ của ML)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#supervised-learning">Supervised Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reference">Reference:</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="clustering-introduction.html">Clustering- Những kiến thức mở đầu</a></li>
@@ -175,16 +177,49 @@ xung quanh data và ML cũng chỉ là 1 trong số chúng mà thôi.</p>
 <p>Hình trên cho thấy các kĩ năng cần thiết nếu bạn chọn một trong 4 công việc liên quan đến data.
 Trong đó kiến thức về ML là cực kì quan trọng đối với kĩ sư ML (Machine Learning Engineer) và
 nhà khoa học dữ liệu (Data Scientist).</p>
+<div class="admonition note">
+<p class="first admonition-title">Ghi chú</p>
+<dl class="docutils">
+<dt>Nguồn tài liệu tiếng Việt là không đủ và không cập nhật nếu bạn muốn tiến xa hơn trong sự nghiệp của mình. Nếu bạn muốn nâng level lên, mình</dt>
+<dd>khuyên thật lòng là bạn nên cân nhắc về việc dành thời gian trau dồi ngoại ngữ của mình. Cũng vì lẽ đó các thuật ngữ</dd>
+</dl>
+<p class="last">được để nguyên tiếng Anh hoặc chú thích với mục đích khiến bạn không bị bỡ ngỡ. Mình đã phải rất chật vật với các định nghĩa toán học
+đã được Việt hóa khi học bằng tiếng Anh (vd: dạng toàn phương). Thế nên là mình tin rằng việc giữ nguyên hay chú thích sẽ giúp bạn về lâu về dài.</p>
+</div>
 </div>
 <div class="section" id="ml-tasks-cac-tac-vu-cua-ml">
 <h2>ML tasks (Các tác vụ của ML)<a class="headerlink" href="#ml-tasks-cac-tac-vu-cua-ml" title="Permalink to this headline">¶</a></h2>
-<p>Có 2 tác vụ chính của ML phụ thuộc vào việc dữ liệu đã được tiền xử lí (phân loại) hay chưa đó là <strong>Supervised Learning</strong> và <strong>Unsupervised Learning</strong>.</p>
-<div class="admonition note">
-<p class="first admonition-title">Ghi chú</p>
-<p class="last">Nguồn tài liệu tiếng Việt là không đủ và không cập nhật nếu bạn muốn tiến xa hơn trong sự nghiệp của mình. Thế nên các thuật ngữ
-được để nguyên tiếng Anh hoặc chú thích với mục đích khiến bạn không bị bỡ ngỡ. Mình đã phải rất chật vật với các định nghĩa toán học
-đã được Việt hóa khi học bằng tiếng Anh (vd: dạng toàn phương). Thế nên là mình tin rằng việc giữ nguyên hay chú thích sẽ giúp bạn về lâu về dài.</p>
+<p>Có 2 tác vụ chính của ML phụ thuộc vào việc dữ liệu đã được tiền xử lí
+(phân loại) hay chưa đó là <strong>Supervised Learning</strong> và <strong>Unsupervised Learning</strong>.</p>
 </div>
+<div class="section" id="supervised-learning">
+<h2>Supervised Learning<a class="headerlink" href="#supervised-learning" title="Permalink to this headline">¶</a></h2>
+<p>Trong đó các thuật toán của DSSupervised Learning <strong>train</strong> mô hình(<strong>model</strong>) dựa trên
+data được dán nhãn (<strong>labeled</strong>) một cách <em>thủ công</em>. <strong>model</strong> được thuật toán sinh ra
+thể hiện mối quan hệ giữa thông số của đầu vào (<strong>input</strong>) và đầu ra (<strong>output</strong>). Sau đó
+model này sẽ được thẩm tra xác minh (<strong>testing</strong>) độ chính xác bằng cách dùng nó để dự đoán giá trị output
+mong muốn. Độ chính xác của thuật toán được thẩm tra bằng cách so sánh giá trị output dự đoán bởi
+thuật toán và giá trị đúng đã gắn nhãn trước đó. Chú ý là data dùng cho training và testing phải không
+bị trùng lặp. Thường thì data được gom lại thành một tệp, thuật toán sẽ thực hiện việc chia data một cách
+ngẫu nhiên thành 2 phần để phục vụ cho training và testing.</p>
+<p>VD: chúng ta có một tập dữ liệu là các bức ảnh <strong>có</strong> và <strong>không có</strong> mặt người. Thuật toán phân loại (classification - bạn sẽ được tìm hiểu sau đó)
+sẽ tìm ra một model thể hiện mối liên hệ dữa thông tin của bức ảnh và label của nó. Sau đó, bạn có thể nhập vào một bức ảnh bất kì và model này sẽ chỉ
+ra trong bức ảnh đó là hình của một khuôn mặt hay không.</p>
+<p>..note:: Các nhà xây dựng thuật toán đều cố gắng đưa ra các đặc điểm (<strong>feature</strong>) tiêu biểu thể hiện rõ ràng mối liên hệ giữa training data và
+label của nó. Nhưng vì đặc trưng là tập dữ liệu chỉ chiếm một phần nhỏ trong tổng số các khả năng có thể xảy ra và các đặc điểm đó không phải là
+tất cả các đặc điểm của model. Do đó <strong>xác suất dự đoán của mọi thuật toán không bao giờ có thể chính xác 100%</strong>. Kể cả con người cũng vẫn có thể mắc sai lầm.
+Hiện nay có một vài thuật toán có thể cho ra kết quả cao hơn xác suất dự đoán chính xác của con người nhưng còn quá sớm để nói là tương lai các hệ thống
+trí tuệ nhân tạo sẽ thống trị thế giới. Các bức tranh về Terminator, Transformer, ... vẫn còn ở rất xa so với nhân loại năm 2018.</p>
+<ul class="simple">
+<li><strong>Semi-Supervised learning</strong>:</li>
+</ul>
+</div>
+<div class="section" id="reference">
+<h2>Reference:<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><a class="reference external" href="https://en.wikipedia.org/wiki/Machine_learning">https://en.wikipedia.org/wiki/Machine_learning</a></li>
+<li><a class="reference external" href="https://www.digitalocean.com/community/tutorials/an-introduction-to-machine-learning">https://www.digitalocean.com/community/tutorials/an-introduction-to-machine-learning</a></li>
+</ol>
 </div>
 </div>
 

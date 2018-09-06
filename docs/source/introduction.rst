@@ -28,7 +28,7 @@ nhà khoa học dữ liệu (Data Scientist).
 
 
 .. note:: Nguồn tài liệu tiếng Việt là không đủ và không cập nhật nếu bạn muốn tiến xa hơn trong sự nghiệp của mình. Nếu bạn muốn nâng level lên, mình
-     khuyên thật lòng là bạn nên cân nhắc về việc dành thời gian trau dồi ngoại ngữ của mình. Cũng vì lẽ đó các thuật ngữ
+    khuyên thật lòng là bạn nên cân nhắc về việc dành thời gian trau dồi ngoại ngữ của mình. Cũng vì lẽ đó các thuật ngữ
     được để nguyên tiếng Anh hoặc chú thích với mục đích khiến bạn không bị bỡ ngỡ. Mình đã phải rất chật vật với các định nghĩa toán học
     đã được Việt hóa khi học bằng tiếng Anh (vd: dạng toàn phương). Thế nên là mình tin rằng việc giữ nguyên hay chú thích sẽ giúp bạn về lâu về dài.
 
@@ -55,22 +55,19 @@ VD: chúng ta có một tập dữ liệu là các bức ảnh **có** và **kh�
 sẽ tìm ra một model thể hiện mối liên hệ dữa thông tin của bức ảnh và label của nó. Sau đó, bạn có thể nhập vào một bức ảnh bất kì và model này sẽ chỉ
 ra trong bức ảnh đó là hình của một khuôn mặt hay không.
 
-..note:: Các nhà xây dựng thuật toán đều cố gắng đưa ra các đặc điểm (**feature**) tiêu biểu thể hiện rõ ràng mối liên hệ giữa training data và
+..note: Các nhà xây dựng thuật toán đều cố gắng đưa ra các đặc điểm (**feature**) tiêu biểu thể hiện rõ ràng mối liên hệ giữa training data và
 label của nó. Nhưng vì đặc trưng là tập dữ liệu chỉ chiếm một phần nhỏ trong tổng số các khả năng có thể xảy ra và các đặc điểm đó không phải là
 tất cả các đặc điểm của model. Do đó **xác suất dự đoán của mọi thuật toán không bao giờ có thể chính xác 100%**. Kể cả con người cũng vẫn có thể mắc sai lầm.
 Hiện nay có một vài thuật toán có thể cho ra kết quả cao hơn xác suất dự đoán chính xác của con người nhưng còn quá sớm để nói là tương lai các hệ thống
 trí tuệ nhân tạo sẽ thống trị thế giới. Các bức tranh về Terminator, Transformer, ... vẫn còn ở rất xa so với nhân loại năm 2018.
 
 Cụ thể hơn, trong Supervised learning gồm:
-* **Semi-Supervised learning**: thuật toán giải quyết các bài toán với data chưa hoàn thiện. Thường thì training set chứa rất nhiều instance chưa
-được gán label. Do đó thuật toán này phải đưa ra dự đoán label cho các instance này.
-* **Active learning**: thuật toán được cung cấp label của một tập nhỏ instance và nhiệm vụ của nó là lựa chọn label cho các đối tượng một cách tối ưu. Thuật toán này thường
-được dùng để gán label cho instance.
 
-* **Reinforecement Learning**: là phương pháp các agent (trợ lí) có nhiệm vụ hành động trong một *môi trường* với mục tiêu tối ưu hóa các giải thưởng. Có thể hiểu một cách đơn giản là
-nếu một cá nhân cư xử tốt thì sẽ được phần thường, ngược lại sẽ bị trừng phạt nếu cư xử không tốt. Các thuật toán reinforecement learning cũng có những cơ chế thưởng phạt và tìm cách đạt
-được càng nhiều phần thưởng càng tốt. Đây là một phương pháp rất thú vị được ứng dụng trong rất nhiều lĩnh vực khác nhau: game theory, control theory, operations research, information theory,
-simulation-based optimization, multi-agent systems, swarm intelligence, statistics and genetic algorithms.
+* **Semi-Supervised learning**: thuật toán giải quyết các bài toán với data chưa hoàn thiện. Thường thì training set chứa rất nhiều instance chưa được gán label. Do đó thuật toán này phải đưa ra dự đoán label cho các instance này.
+
+* **Active learning**: thuật toán được cung cấp label của một tập nhỏ instance và nhiệm vụ của nó là lựa chọn label cho các đối tượng một cách tối ưu. Thuật toán này thường được dùng để gán label cho instance.
+
+* **Reinforecement Learning**: là phương pháp các agent (trợ lí) có nhiệm vụ hành động trong một *môi trường* với mục tiêu tối ưu hóa các giải thưởng. Có thể hiểu một cách đơn giản là nếu một cá nhân cư xử tốt thì sẽ được phần thường, ngược lại sẽ bị trừng phạt nếu cư xử không tốt. Các thuật toán reinforecement learning cũng có những cơ chế thưởng phạt và tìm cách đạt được càng nhiều phần thưởng càng tốt. Đây là một phương pháp rất thú vị được ứng dụng trong rất nhiều lĩnh vực khác nhau: game theory, control theory, operations research, information theory, simulation-based optimization, multi-agent systems, swarm intelligence, statistics and genetic algorithms.
 
 Unsupervised Learning
 ---------------------
@@ -93,9 +90,7 @@ Các ứng dụng của Machine Learning
 
 *Một phương pháp khác phân loại các thuật toán ML dựa vào output của nó*:
 
-* **Classification**: dữ liệu input được chia thành 2 hay nhiều class (lớp), và thuật toán có nhiệm vụ xếp các dữ liệu mới vào một hay nhiều class trong số các class trên.
-Đây thường là một bài toán Supervised learning. Bộ lọc email spam (spam filtering) là một ví dụ của classification, với input thường là email hay tin nhắn được gán label là "spam"
-và "not spam".
+* **Classification**: dữ liệu input được chia thành 2 hay nhiều class (lớp), và thuật toán có nhiệm vụ xếp các dữ liệu mới vào một hay nhiều class trong số các class trên. Đây thường là một bài toán Supervised learning. Bộ lọc email spam (spam filtering) là một ví dụ của classification, với input thường là email hay tin nhắn được gán label là "spam" và "not spam".
 
 * **Regression**: đây cũng là một bài toán Supervised, với kết quả output thường là hàm liên tục thay vì các class rời rạc như trong classification.
 
@@ -105,7 +100,7 @@ và "not spam".
 
 * **Dimensional reduction** đơn giản hóa inputs bằng cách ép (mapping) chúng vào một miền không gian ít chiều hơn (lower-Dimensional space).
 
-..note:: Tóm lại note này giúp bạn có cái nhìn cơ bản về các thuật ngữ của ML. Có thể bạn sẽ bị bỡ ngỡ đôi chút về các diễn giải nếu là người mới bắt đầu tìm hiểu ML. Đừng lo, bạn sẽ
+..note: Tóm lại note này giúp bạn có cái nhìn cơ bản về các thuật ngữ của ML. Có thể bạn sẽ bị bỡ ngỡ đôi chút về các diễn giải nếu là người mới bắt đầu tìm hiểu ML. Đừng lo, bạn sẽ
 hoàn toàn nắm được những nội dung của note khi đi vào các bài sau.
 
 Reference:

@@ -16,6 +16,8 @@ Machine Learning cho người Việt!
    mixture-of-gaussian
    power-iteration-clustering
    help
+   contact
+   
 
 
 Indices and tables

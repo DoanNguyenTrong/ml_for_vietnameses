@@ -10,8 +10,14 @@ Machine Learning cho người Việt!
    :maxdepth: 2
 
    introduction
-   Clustering
+   clustering-introduction
+   k-means-clustering
+   k-nearest-neighbors
+   mixture-of-gaussian
+   power-iteration-clustering
    help
+   contact
+   
 
 
 Indices and tables

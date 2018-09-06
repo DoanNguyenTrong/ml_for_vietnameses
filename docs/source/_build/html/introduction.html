@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Giới thiệu về Machine Learning &mdash; Tài liệu Machine Learing for Vietnameses 0.1.0</title>
+  <title>Giới thiệu về Machine Learning &mdash; Tài liệu Machine Learing for Vietnameses 0.1.1</title>
   
 
   
@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Tìm Kiếm" href="search.html" />
-    <link rel="next" title="Giúp đỡ!" href="help.html" />
+    <link rel="next" title="Clustering- Những kiến thức mở đầu" href="clustering-introduction.html" />
     <link rel="prev" title="Machine Learning cho người Việt!" href="index.html" /> 
 
   
@@ -79,8 +79,18 @@
             
             
               <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Giới thiệu về Machine Learning</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Giới thiệu về Machine Learning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#gioi-thieu-chung">Giới thiệu chung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ml-tasks-cac-tac-vu-cua-ml">ML tasks (Các tác vụ của ML)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="clustering-introduction.html">Clustering- Những kiến thức mở đầu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="k-means-clustering.html">k-Means Clustering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="k-nearest-neighbors.html">k-Nearest Neighbors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mixture-of-gaussian.html">Mixture of Gaussian</a></li>
+<li class="toctree-l1"><a class="reference internal" href="power-iteration-clustering.html">Power iteration Clustering</a></li>
 <li class="toctree-l1"><a class="reference internal" href="help.html">Giúp đỡ!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact.html">Liên lạc!</a></li>
 </ul>
 
             
@@ -147,6 +157,35 @@
             
   <div class="section" id="gioi-thieu-ve-machine-learning">
 <h1>Giới thiệu về Machine Learning<a class="headerlink" href="#gioi-thieu-ve-machine-learning" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="gioi-thieu-chung">
+<h2>Giới thiệu chung<a class="headerlink" href="#gioi-thieu-chung" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt><strong>Định nghĩa</strong>:</dt>
+<dd><strong>Machine Learning(ML)</strong> là một nhánh của ngành khoa học máy tính (Computer Science) tập trung sử dụng các phương pháp thống kê
+<strong>(Statistical techniques)</strong> để trao cho các hệ thống tính toán (máy tính) khả năng &quot;học hỏi&quot; từ tập dữ liệu (data) mà không
+cần phải được lập trình một cách chuyên biệt.</dd>
+</dl>
+<p>Theo định nghĩa trên bạn nên chú ý rằng khả năng &quot;học hỏi&quot; của các thuật toán ML dựa trên một loạt các phép toán <strong>thống kê xác suất</strong>
+và các quyết định/dự đoán do thuật toán đưa ra hoàn toàn phụ thuộc vào <strong>dữ liệu (data)</strong> đã thu thập được.
+Chính vì thế data là một thứ cốt lõi và cực kì quan trọng trong ML.</p>
+<p>Có khá nhiều nhánh công việc giải quyết các bài toán
+xung quanh data và ML cũng chỉ là 1 trong số chúng mà thôi.</p>
+<a class="reference internal image-reference" href="_images/Data-Science-Skills-Udacity-Matrix.png"><img alt="_images/Data-Science-Skills-Udacity-Matrix.png" class="align-center" src="_images/Data-Science-Skills-Udacity-Matrix.png" style="width: 90%;" /></a>
+<p><a class="reference external" href="https://1onjea25cyhx3uvxgs4vu325-wpengine.netdna-ssl.com/wp-content/uploads/2014/11/Data-Science-Skills-Udacity-Matrix.png">nguồn</a></p>
+<p>Hình trên cho thấy các kĩ năng cần thiết nếu bạn chọn một trong 4 công việc liên quan đến data.
+Trong đó kiến thức về ML là cực kì quan trọng đối với kĩ sư ML (Machine Learning Engineer) và
+nhà khoa học dữ liệu (Data Scientist).</p>
+</div>
+<div class="section" id="ml-tasks-cac-tac-vu-cua-ml">
+<h2>ML tasks (Các tác vụ của ML)<a class="headerlink" href="#ml-tasks-cac-tac-vu-cua-ml" title="Permalink to this headline">¶</a></h2>
+<p>Có 2 tác vụ chính của ML phụ thuộc vào việc dữ liệu đã được tiền xử lí (phân loại) hay chưa đó là <strong>Supervised Learning</strong> và <strong>Unsupervised Learning</strong>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Ghi chú</p>
+<p class="last">Nguồn tài liệu tiếng Việt là không đủ và không cập nhật nếu bạn muốn tiến xa hơn trong sự nghiệp của mình. Thế nên các thuật ngữ
+được để nguyên tiếng Anh hoặc chú thích với mục đích khiến bạn không bị bỡ ngỡ. Mình đã phải rất chật vật với các định nghĩa toán học
+đã được Việt hóa khi học bằng tiếng Anh (vd: dạng toàn phương). Thế nên là mình tin rằng việc giữ nguyên hay chú thích sẽ giúp bạn về lâu về dài.</p>
+</div>
+</div>
 </div>
 
 
@@ -157,7 +196,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="help.html" class="btn btn-neutral float-right" title="Giúp đỡ!" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="clustering-introduction.html" class="btn btn-neutral float-right" title="Clustering- Những kiến thức mở đầu" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral" title="Machine Learning cho người Việt!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -191,7 +230,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.1.0',
+            VERSION:'0.1.1',
             LANGUAGE:'vi',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

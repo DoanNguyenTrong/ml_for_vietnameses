@@ -1,2 +1,40 @@
 Giới thiệu về Machine Learning
 ==============================
+
+Giới thiệu chung
+----------------
+
+**Định nghĩa**:
+    **Machine Learning(ML)** là một nhánh của ngành khoa học máy tính (Computer Science) tập trung sử dụng các phương pháp thống kê
+    **(Statistical techniques)** để trao cho các hệ thống tính toán (máy tính) khả năng "học hỏi" từ tập dữ liệu (data) mà không
+    cần phải được lập trình một cách chuyên biệt.
+
+Theo định nghĩa trên bạn nên chú ý rằng khả năng "học hỏi" của các thuật toán ML dựa trên một loạt các phép toán **thống kê xác suất**
+và các quyết định/dự đoán do thuật toán đưa ra hoàn toàn phụ thuộc vào **dữ liệu (data)** đã thu thập được.
+Chính vì thế data là một thứ cốt lõi và cực kì quan trọng trong ML. 
+
+Có khá nhiều nhánh công việc giải quyết các bài toán
+xung quanh data và ML cũng chỉ là 1 trong số chúng mà thôi.
+
+.. image:: /images/Data-Science-Skills-Udacity-Matrix.png
+    :width: 90%
+    :align: center
+
+`nguồn  <https://1onjea25cyhx3uvxgs4vu325-wpengine.netdna-ssl.com/wp-content/uploads/2014/11/Data-Science-Skills-Udacity-Matrix.png>`_
+
+Hình trên cho thấy các kĩ năng cần thiết nếu bạn chọn một trong 4 công việc liên quan đến data.
+Trong đó kiến thức về ML là cực kì quan trọng đối với kĩ sư ML (Machine Learning Engineer) và 
+nhà khoa học dữ liệu (Data Scientist).
+
+ML tasks (Các tác vụ của ML)
+----------------------------
+
+Có 2 tác vụ chính của ML phụ thuộc vào việc dữ liệu đã được tiền xử lí (phân loại) hay chưa đó là **Supervised Learning** và **Unsupervised Learning**.
+
+
+.. note:: Nguồn tài liệu tiếng Việt là không đủ và không cập nhật nếu bạn muốn tiến xa hơn trong sự nghiệp của mình. Thế nên các thuật ngữ
+    được để nguyên tiếng Anh hoặc chú thích với mục đích khiến bạn không bị bỡ ngỡ. Mình đã phải rất chật vật với các định nghĩa toán học
+    đã được Việt hóa khi học bằng tiếng Anh (vd: dạng toàn phương). Thế nên là mình tin rằng việc giữ nguyên hay chú thích sẽ giúp bạn về lâu về dài.
+
+ 
+

@@ -55,11 +55,7 @@ VD: chúng ta có một tập dữ liệu là các bức ảnh **có** và **kh�
 sẽ tìm ra một model thể hiện mối liên hệ dữa thông tin của bức ảnh và label của nó. Sau đó, bạn có thể nhập vào một bức ảnh bất kì và model này sẽ chỉ
 ra trong bức ảnh đó là hình của một khuôn mặt hay không.
 
-..note: Các nhà xây dựng thuật toán đều cố gắng đưa ra các đặc điểm (**feature**) tiêu biểu thể hiện rõ ràng mối liên hệ giữa training data và
-label của nó. Nhưng vì đặc trưng là tập dữ liệu chỉ chiếm một phần nhỏ trong tổng số các khả năng có thể xảy ra và các đặc điểm đó không phải là
-tất cả các đặc điểm của model. Do đó **xác suất dự đoán của mọi thuật toán không bao giờ có thể chính xác 100%**. Kể cả con người cũng vẫn có thể mắc sai lầm.
-Hiện nay có một vài thuật toán có thể cho ra kết quả cao hơn xác suất dự đoán chính xác của con người nhưng còn quá sớm để nói là tương lai các hệ thống
-trí tuệ nhân tạo sẽ thống trị thế giới. Các bức tranh về Terminator, Transformer, ... vẫn còn ở rất xa so với nhân loại năm 2018.
+.. note:: Các nhà xây dựng thuật toán đều cố gắng đưa ra các đặc điểm (**feature**) tiêu biểu thể hiện rõ ràng mối liên hệ giữa training data và label của nó. Nhưng vì đặc trưng là tập dữ liệu chỉ chiếm một phần nhỏ trong tổng số các khả năng có thể xảy ra và các đặc điểm đó không phải là tất cả các đặc điểm của model. Do đó **xác suất dự đoán của mọi thuật toán không bao giờ có thể chính xác 100%**. Kể cả con người cũng vẫn có thể mắc sai lầm. Hiện nay có một vài thuật toán có thể cho ra kết quả cao hơn xác suất dự đoán chính xác của con người nhưng còn quá sớm để nói là tương lai các hệ thống trí tuệ nhân tạo sẽ thống trị thế giới. Các bức tranh về Terminator, Transformer, ... vẫn còn ở rất xa so với nhân loại năm 2018.
 
 Cụ thể hơn, trong Supervised learning gồm:
 
@@ -100,8 +96,7 @@ Các ứng dụng của Machine Learning
 
 * **Dimensional reduction** đơn giản hóa inputs bằng cách ép (mapping) chúng vào một miền không gian ít chiều hơn (lower-Dimensional space).
 
-..note: Tóm lại note này giúp bạn có cái nhìn cơ bản về các thuật ngữ của ML. Có thể bạn sẽ bị bỡ ngỡ đôi chút về các diễn giải nếu là người mới bắt đầu tìm hiểu ML. Đừng lo, bạn sẽ
-hoàn toàn nắm được những nội dung của note khi đi vào các bài sau.
+.. note:: Tóm lại note này giúp bạn có cái nhìn cơ bản về các thuật ngữ của ML. Có thể bạn sẽ bị bỡ ngỡ đôi chút về các diễn giải nếu là người mới bắt đầu tìm hiểu ML. Đừng lo, bạn sẽ hoàn toàn nắm được những nội dung của note khi đi vào các bài sau.
 
 Reference:
 ----------

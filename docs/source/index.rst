@@ -6,6 +6,38 @@
 Machine Learning cho người Việt!
 ================================
 
+
+Vài lời nói đầu:
+----------------
+
+Thế giới đang bị chao đảo bời cái gọi là trí tuệ nhân tạo (Artificial Intellicence). Sau hơn 60 năm hình thành và phát triển, những năm 201x là giai đoạn nở rộ 
+và gặt hái được những thành công nhất định. Tương lai các hệ thống tính toán (computing systems) sẽ càng trở nên thông minh hơn, mang lại cho con người nhiều tiện 
+ích trong cuộc sống hơn. Những công nghệ mới được xây dựng trên nền tảng các thuật toán phân tích dữ liệu đã trao cho máy tính có khả năng tự đưa ra quyết định thay
+vì tuân thủ 100% các chỉ lệnh từ programer.
+
+Đây là một miền đất hứa dành cho những bạn trẻ Việt Nam, những người cần cù, ham học hỏi, và giàu sức sáng tạo. Với mong muốn giúp đỡ cho những ai có hứng thú với các
+thuật toán của Machine Learning, notebook này cung cấp cho các bạn các kiến thức lí thuyết để các bạn bắt đầu một cách đễ dàng hơn.
+
+.. note:: Ở level cao hơn, đi sâu vào nghiên cứu cải thiện performance hay xây dựng các thuật toán mới đòi hỏi phải tìm hiểu và cập nhật từ các nguồn tài liệu như các bài báo khoa học. Chính vì thế có 2 thứ các bạn cần phải cải thiện nếu muốn tiến xa hơn đó là **toán học** và **tiếng anh**. Các bạn hãy đầu tư nghiêm túc vào hai thứ này nhé.
+
+
+Mình không phải là dân Computer Science gốc.
+Mình học Mechatronics sau đó tự học về Machine Learing, Artificial Intellicence từ các nguồn online như Coursera và MIT open courseware
+
+    * https://www.coursera.org/account/accomplishments/certificate/ME847MG6DDZV
+    * https://www.youtube.com/playlist?list=PLUl4u3cNGP63gFHB6xb-kVBiQHYe_4hSi
+
+    
+Sau đó mình theo học Master tại National Chiao Tung University (top 50 trường đại học tốt nhất TG về Computer Science).
+Thế nên nội dung trong notebook có sự tham khảo và chuyển thể từ các nguồn trên.
+Sẽ có rất nhiều khó khăn trên con đường tìm hiểu AI, ML. Đừng lo lắng, nếu bạn đầu tư công sức, thời gian một cách nghiêm túc; bạn sẽ đạt được mục tiêu của mình.
+Người Nhật có một câu mà mình coi đó là tôn chỉ của bản thân đó là:**Nếu bạn đủ chăm chỉ, bạn sẽ làm được hầu hết mọi việc**.
+Chúc các bạn thành công!
+
+Nếu có thắc mắc, đừng ngại liên lạc với mình theo mục Contact nhé.
+
+
+
 .. toctree::
    :maxdepth: 2
 
